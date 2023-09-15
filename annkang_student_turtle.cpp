@@ -19,7 +19,9 @@ turtleMove studentTurtleStep(bool bumped) {return MOVE;}
 
 // OK TO MODIFY BELOW THIS LINE
 
-int move;
+//int move;
+enum Moves {Right, Left, Straight};
+Moves move;
 		 
 // this procedure takes the current turtle position and orientation and returns
 // true=submit changes, false=do not submit changes
@@ -35,10 +37,9 @@ bool studentMoveTurtle(QPointF& pos_, int& dir) {
     // vectors used for wall checking, indexed by turtle direction
     int wall_coords[4][4] = {{0,0,0,1}, {0,0,1,0}, {1,0,1,1}, {0,1,1,1}};
 
-    // if turtle went straight, turn left
-    if (move == 2) {
+    if (move == Straight) {
 	dir = (dir + 3) % 4;
-	move = 1;
+	move = Left;
 	return true;
     }
  
@@ -50,12 +51,12 @@ bool studentMoveTurtle(QPointF& pos_, int& dir) {
     // turn right	
     if (wall) {
 	dir = (dir + 1) % 4; 
-	move = 0;
+	move = Right;
 	return true;
     }
 
     // go straight 
-    move = 2;
+    move = Straight;
     if (dir == 1) {
 	pos_.setY(pos_.y() - 1);
     } else if (dir == 2) {
