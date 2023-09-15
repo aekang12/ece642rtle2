@@ -18,10 +18,6 @@
 turtleMove studentTurtleStep(bool bumped) {return MOVE;}
 
 // OK TO MODIFY BELOW THIS LINE
-
-//int move;
-enum Moves {Right, Left, Straight};
-Moves move;
 		 
 // this procedure takes the current turtle position and orientation and returns
 // true=submit changes, false=do not submit changes
@@ -34,10 +30,15 @@ bool studentMoveTurtle(QPointF& pos_, int& dir) {
 
     sleep(1);
     
-    // vectors used for wall checking, indexed by turtle direction
-    int wall_coords[4][4] = {{0,0,0,1}, {0,0,1,0}, {1,0,1,1}, {0,1,1,1}};
+    // vectors used for wall checking, indexed by turtle direction: 
+    // {0, 1, 2, 3}, or {W, N, E, S}
+    uint8_t wall_coords[4][4] = {{0,0,0,1}, {0,0,1,0}, {1,0,1,1}, {0,1,1,1}};
+    enum Directions {W, N, E, S};
+    enum Moves {Right, Left, Straight};
+    static Moves move;
 
     if (move == Straight) {
+	// add 3 to deal with mod of -1, turn left
 	dir = (dir + 3) % 4;
 	move = Left;
 	return true;
@@ -48,25 +49,32 @@ bool studentMoveTurtle(QPointF& pos_, int& dir) {
     pos_.y() + wall_coords[dir][1], \
     pos_.x() + wall_coords[dir][2],pos_.y() + wall_coords[dir][3]);
 
-    // turn right	
     if (wall) {
+	// turn right
 	dir = (dir + 1) % 4; 
 	move = Right;
 	return true;
     }
 
-    // go straight 
+    Directions dir_enum = (Directions) dir; 
     move = Straight;
-    if (dir == 1) {
-	pos_.setY(pos_.y() - 1);
-    } else if (dir == 2) {
-	pos_.setX(pos_.x() + 1);
-    } else if (dir == 3) {
-	pos_.setY(pos_.y() + 1);
-    } else {
-        pos_.setX(pos_.x() - 1);
+    switch (dir_enum) {
+	case N:
+	    pos_.setY(pos_.y()-1);
+	    break;
+	case E:
+	    pos_.setX(pos_.x()+1);
+	    break;
+	case S:
+	    pos_.setY(pos_.y()+1);
+	    break;
+	case W:
+	    pos_.setX(pos_.x()-1);
+	    break;
+	default:
+	    ROS_ERROR("Invalid direction!"); 
     }
     
-    ROS_INFO("Orientation=%f  STATE=%f", dir, move);
+    ROS_INFO("Orientation=%i", dir);
     return true;
 }
