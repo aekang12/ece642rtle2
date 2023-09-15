@@ -20,14 +20,13 @@ turtleMove studentTurtleStep(bool bumped) {return MOVE;}
 
 #define TIMEOUT 40    // bigger number slows down simulation so you can see what's happening
 float w, cs;
-//enum nw_or {W, N, E, S};
 		 
 // this procedure takes the current turtle position and orientation and returns
 // true=submit changes, false=do not submit changes
 // Ground rule -- you are only allowed to call the helper functions "bumped(..)" and "atend(..)",
 // and NO other turtle methods or maze methods (no peeking at the maze!)
 bool studentMoveTurtle(QPointF& pos_, int& nw_or) {
-    ROS_INFO("Turtle update Called  w=%f", w);
+    //ROS_INFO("Turtle update Called  w=%f", w);
     bool bp = false;
 
     if (atend(pos_.x(), pos_.y())) {
@@ -35,42 +34,34 @@ bool studentMoveTurtle(QPointF& pos_, int& nw_or) {
     }
 
     if(w == 0) {
-	float fx1 = pos_.x(); 
-	float fy1 = pos_.y();
-        float fx2 = pos_.x(); 
-	float fy2 = pos_.y();
-	if (nw_or == 0) fy2+=1;
-	else if (nw_or == 1)           fx2+=1;
-	else {
-		fx2+=1; fy2+=1; 
-		  if (nw_or == 2) fx1+=1;  
-		  else            fy1+=1;} 
-		
-		bp = bumped(fx1,fy1,fx2,fy2);
-		if(nw_or == 0)
-		if(cs == 2)  { nw_or = 3;  cs = 1; }
-		else if (bp) { nw_or = 1;  cs = 0; }
-		else cs = 2;
-		else if(nw_or == 1)
-		if(cs == 2)  { nw_or = 0;  cs = 1; }
-		else if (bp) { nw_or = 2;  cs = 0; }
-		else cs = 2;
-		else if(nw_or == 2)
-		if(cs == 2)  { nw_or = 1;  cs = 1; }
-		else if (bp) { nw_or = 3;  cs = 0; }
-		else cs = 2;
-		else if(nw_or == 3)
-		if(cs == 2)  { nw_or = 2;  cs = 1; }
-		else if (bp) { nw_or = 0;  cs = 0; }
-		else cs = 2;
-	 ROS_INFO("Orientation=%f  STATE=%f", nw_or, cs);
-	 if(cs == 2) {
+	if (nw_or==0) {
+	    bp = bumped(pos_.x(),pos_.y(),pos_.x(),pos_.y()+1);
+	} else if (nw_or == 1) {
+	    bp = bumped(pos_.x(),pos_.y(),pos_.x()+1,pos_.y());
+	} else if (nw_or == 2) {
+	    bp = bumped(pos_.x()+1,pos_.y(),pos_.x()+1,pos_.y()+1);
+	} else {
+	    bp = bumped(pos_.x(),pos_.y()+1,pos_.x()+1,pos_.y()+1);
+	}
+	
+	if (cs == 2) {
+	    nw_or = (nw_or+3) % 4;
+	    cs = 1;
+	} else if (bp) {
+	    nw_or = (nw_or + 1) % 4; 
+	    cs = 0;
+	} else {
+	    cs = 2;
      if (nw_or == 1) pos_.setY(pos_.y() - 1); 
      if (nw_or == 2) pos_.setX(pos_.x() + 1);
      if (nw_or == 3) pos_.setY(pos_.y() + 1);
      if (nw_or == 0) pos_.setX(pos_.x() - 1);
-    }}
-    if (w==0) w  = TIMEOUT; else w -= 1;
-    if (w==TIMEOUT) return true;
+	}	
+	 //ROS_INFO("Orientation=%f  STATE=%f", nw_or, cs);
+	w = TIMEOUT;
+	return true;
+    } else {
+	w -= 1;
+ }
  return false;
 }
