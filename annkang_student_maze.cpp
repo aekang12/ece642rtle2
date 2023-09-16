@@ -23,34 +23,98 @@
 
 #include "student.h"
 
-/*
- * This procedure takes the current turtle position and orientation and returns true=accept changes, false=do not accept changes
- * Ground rule -- you are only allowed to call the three helper functions defined in student.h, and NO other turtle methods or maze methods (no peeking at the maze!)
- * This file interfaces with functions in student_turtle.cpp
- */
-bool moveTurtle(QPointF& pos_, int& nw_or)
-{
-  bool bumped = true; // Replace with your own procedure
-  turtleMove nextMove = studentTurtleStep(bumped); // define your own turtleMove enum or structure
-  pos_ = translatePos(pos_, nextMove);
-  nw_or = translateOrnt(nw_or, nextMove);
-
-  // REPLACE THE FOLLOWING LINE IN PROJECT 5
-  return studentMoveTurtle(pos_, nw_or);
+// this funtion takes in turtle position pos_ and 
+// turtle direction dir and returns true if there is a wall 
+// in front of the turtle and false otherwise
+bool check_wall(QPointF& pos_, int& direction) {
+    // wall_coords contains vectors to help check if 
+    // there is a wall directly in front of the turtle 
+    // Each vector has 4 elements:
+	// {update to x1, update to y1, update to x2, update to y2}
+	// the updates are either 1 or 0 since walls have length 1
+    // There are 4 vectors total, indexed as follows: 
+        // {vector for if turtle is facing West, 
+	// vector for if turtle is facing North, 
+	// vector for if turtle is facing East, 
+	// vector for if turtle is facing South}
+    uint8_t wall_coords[num_dirs][num_coords] = {{0,0,0,1}, {0,0,1,0},\
+						{1,0,1,1}, {0,1,1,1}};
+    // add appropriate wall coordinates to the turtle's position to 
+    // get the endpoints of the wall direclty in front of the turtle
+    bool wall_exists = bumped(pos_.x() + wall_coords[direction][0], \
+    		       pos_.y() + wall_coords[direction][1], \
+    		       pos_.x() + wall_coords[direction][2], \
+		       pos_.y() + wall_coords[direction][3]);
 }
 
 /*
- * Takes a position and a turtleMove and returns a new position
- * based on the move
+ * This procedure calls displayVisits to update the number of visits to 
+ * the current maze cell
  */
-QPointF translatePos(QPointF pos_, turtleMove nextMove) {
-  return pos_;
+void mazeVisits(uint8_t num_visits) {
+    displayVisits(num_visits);
+}
+
+/*
+ * This procedure takes the current turtle position and orientation and returns true=accept changes, false=do not accept changes
+ * This file interfaces with functions in student_turtle.cpp
+ */
+bool moveTurtle(QPointF& pos_, int& direction)
+{
+    if (atend(pos_.x(), pos_.y())) {
+	return false;
+    }
+    bool bumped = check_wall(pos_, direction);
+    Moves nextMove = studentTurtleStep(bumped, direction); 
+    pos_ = translatePos(pos_, direction, nextMove);
+    direction = translateOrnt(direction, nextMove);
+    return true;
+}
+
+/*
+ * Takes a position and a Move and returns a new position
+ * based on the move 
+*/
+QPointF translatePos(QPointF pos_, int direction, Moves nextMove) {
+    if (nextMove != Straight) {
+	return pos_;
+    }
+
+    switch ((Directions)direction) {
+	case North:
+	    pos_.setY(pos_.y()-1);
+	    break;
+	case East:
+	    pos_.setX(pos_.x()+1);
+	    break;
+	case South:
+	    pos_.setY(pos_.y()+1);
+	    break;
+	case West:
+	    pos_.setX(pos_.x()-1);
+	    break;
+	default:
+	    ROS_ERROR("Invalid direction!"); 
+    }
+    return pos_;
 }
 
 /*
  * Takes an orientation and a turtleMove and returns a new orienation
  * based on the move
  */
-int translateOrnt(int orientation, turtleMove nextMove) {
-  return orientation;
+int translateOrnt(int orientation, Moves nextMove) {
+    switch(nextMove) {
+	case Straight:
+	    break;
+	case Left:
+	    orientation = (orientation + (num_dirs-1)) % num_dirs;
+	    break;
+	case Right:
+	    orientation = (orientation + 1) % num_dirs;
+	    break;
+	default:
+	    ROS_ERROR("Invalid direction!");
+    }
+    return orientation;
 }
