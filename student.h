@@ -18,6 +18,7 @@ bool moveTurtle(QPointF& pos_, int& nw_or);
 // Scope-preserving changes to these lines permitted (see p5 writeup)
 enum turtleMove {MOVE};
 enum Directions {West, North, East, South};
+enum State {Spawned, Turned_left, Turned_right, Moved, Goal, Turn_min, Back};
 enum Moves {Right, Left, Straight};
 const uint8_t num_dirs = 4; 
 const uint8_t num_coords = 4;

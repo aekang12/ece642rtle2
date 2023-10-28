@@ -17,59 +17,220 @@
 // tracker is a 24 by 24 array that helps maze track how many times 
 // each cell has been visited. trackerx and trackery keep track of turtle 
 // position, initialized to the center of array
-static struct tracker{
+static struct Tracker{
     uint8_t array[23][23] = {};
     uint8_t x = 11; 
     uint8_t y = 11; 
     
     // constructor for initialization 
-    tracker() {
+    Tracker() {
 	array[11][11] = 1; 
     }
-} turtle_tracker;
+} tracker;
+static int memory[3] = {0}; 
 
-// this procedure tracks number of visits to each cell in the turtle's 
-// local array. it takes in direction, the turtle's current direction
-void track_turtle(int& direction) {
+// clear the turtle's memory 
+void clear_memory() {
+    memory[(int)Straight] = 0; 
+    memory[(int)Left] = 0; 
+    memory[(int)Right] = 0; 
+}
+
+// track number of visits to each cell in the turtle's local array
+void update_pos(int& direction) {
     switch ((Directions)direction) {
 	case North:
-	    turtle_tracker.y += 1;
+	    tracker.y += 1;
 	    break;
 	case East:
-	    turtle_tracker.x += 1;
+	    tracker.x += 1;
 	    break;
 	case South:
-	    turtle_tracker.y -= 1;
+	    tracker.y -= 1;
 	    break;
 	case West:
-	    turtle_tracker.x -= 1;
+	    tracker.x -= 1;
 	    break;
 	default:
 	    ROS_ERROR("Invalid direction!"); 
     }
-    turtle_tracker.array[turtle_tracker.x][turtle_tracker.y] += 1;
-    mazeVisits(turtle_tracker.array[turtle_tracker.x][turtle_tracker.y]);
     return; 
 }
 
-// this procedure recommends next move following the left hand rule 
+// gets turtle's relative coordinates of the cell direclty in front of it 
+uint8_t* get_pos_ahead(int& direction) {
+    uint8_t coords[2]; 
+    switch ((Directions)direction) {
+	case North:
+	    coords[0] = tracker.x;
+	    coords[1] = tracker.y + 1;
+	    return coords;
+	case East:
+	    coords[0] = tracker.x+1;
+	    coords[1] = tracker.y; 
+	    return coords;
+	case South:
+	    coords[0] = tracker.x;
+	    coords[1] = tracker.y-1; 
+	    return coords;
+	case West:
+	    coords[0] = tracker.x-1;
+	    coords[1] = tracker.y; 
+	    return coords;
+	default:
+	    ROS_ERROR("Invalid direction!"); 
+	    return coords; 
+    }
+}
+
+// updates the turtle's memory of what's direclty in front of it 
+int look_ahead(bool bumped, int& direction) {
+    const int wall_val = 1000;
+    if (bumped) {
+	return wall_val; 
+    } else {
+	uint8_t* coords = get_pos_ahead(direction); 
+    	return tracker.array[coords[0]][coords[1]];
+    }
+}
+
+// check if the turlte is in a dead end
+bool all_walls(int memory[3]) {
+    int min_value = 1000;
+    int min_index = 0;
+    std::list<int> DIRS;  
+    for (int i = 0; i < 3; ++i) {
+	if (memory[i] < min_value) {
+	    min_value = memory[i];
+	    min_index = i;
+	}
+    }
+    if (min_value == 1000) {
+	// dead end, return empty DIRS
+	return true; 
+    }
+    return false;
+}
+
+// get DIRS, a list of directions to turn in to face the minimum 
+// visited path 
+std::list<Moves> get_DIRS(int memory[3]) {
+    int min_value = 1000;
+    int min_index = 0;
+    for (int i = 0; i < 3; ++i) {
+	if (memory[i] < min_value) {
+	    min_value = memory[i];
+	    min_index = i;
+	}
+    }
+    if ((Moves)min_index == Right) {
+	return {}; 
+    } else if ((Moves)min_index == Left) {
+	return {Left, Left};
+    } else if ((Moves)min_index == Straight) {
+	return {Left};
+    }
+}
+
+// this procedure recommends next move following DFS 
 // bumped is true if there is a wall in front of the turtle, false otherwise
 Moves studentTurtleStep(bool bumped, int& direction) {
     static Moves move;
+    static State state = Moved;
+    static int remaining_rights = 0;
+    static std::list<Moves> DIRS;
+    int num_visits;
 
     // sleep for 1 second, changing sleep duration changes turtle speed
     sleep(0.1); 
 
-    if (move == Straight) {
-	move = Left;
-	track_turtle(direction);
-    } else if (bumped) {
-	move = Right;
-    } else {
-	move = Straight;
+    switch (state) {
+	case Spawned:
+	    // this is assuming turtle never spawns facing a wall
+	    update_pos(direction);
+	    state = Moved; 
+	    return Straight;
+	case Moved:
+    	    tracker.array[tracker.x][tracker.y] += 1;
+    	    mazeVisits(tracker.array[tracker.x][tracker.y]);
+	    num_visits = look_ahead(bumped, direction);
+	    memory[(int)Straight] = num_visits;
+            if (num_visits == 0) {
+		clear_memory();
+	        update_pos(direction);
+		state = Moved;
+		return Straight;
+	    } else {
+	        state = Turned_left; 
+		return Left;
+	    } 
+	case Turned_left:
+	    num_visits = look_ahead(bumped, direction);
+	    memory[(int)Left] = num_visits;
+            if (num_visits == 0) {
+		clear_memory();
+	        update_pos(direction);
+		state = Moved;
+		return Straight;
+	    } else {
+		remaining_rights = 2; 
+		state = Turned_right; 
+		return Right;
+	    }
+	case Turned_right:
+	    remaining_rights -= 1; 
+	    if (remaining_rights > 0) {
+		return Right; 
+	    }
+	    num_visits = look_ahead(bumped, direction);
+	    memory[(int)Right] = num_visits;
+            if (num_visits == 0) {
+		clear_memory();
+	        update_pos(direction);
+		state = Moved;
+		return Straight;
+	    } else {
+		if (all_walls(memory)) {
+		    state = Back;
+		    return Right;
+		}
+		DIRS = get_DIRS(memory);
+		if (DIRS.empty()) {
+		    clear_memory();
+	            update_pos(direction);
+		    state = Moved;
+		    return Straight;
+		}
+		state = Turn_min;
+		Moves next = DIRS.front();  
+		DIRS.pop_front();
+		return next;
+	    }
+	case Back:
+	    clear_memory();
+	    update_pos(direction);
+	    state = Moved;
+	    return Straight;
+	case Turn_min:
+	    if (DIRS.empty()) {
+	    	clear_memory();
+	    	update_pos(direction);
+	    	state = Moved;
+		return Straight;
+	    } else {
+		Moves next = DIRS.front();
+		DIRS.pop_front(); 
+		return next; 
+	    }
+	default:
+	    // note that turtle will never be in Goal state since 
+	    // maze.cpp will stop calling turtle.cpp so it is not included 
+	    // in this switch statement
+	    ROS_ERROR("Invalid direction!"); 
     }
     
     ROS_INFO("Orientation=%i", direction);
-    return move;
+    return Straight;
 }
+
 
