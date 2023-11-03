@@ -41,10 +41,11 @@ bool check_wall(QPointF& pos_, int& direction) {
 						{1,0,1,1}, {0,1,1,1}};
     // add appropriate wall coordinates to the turtle's position to 
     // get the endpoints of the wall direclty in front of the turtle
-    bool wall_exists = bumped(pos_.x() + wall_coords[direction][0], \
-    		       pos_.y() + wall_coords[direction][1], \
-    		       pos_.x() + wall_coords[direction][2], \
-		       pos_.y() + wall_coords[direction][3]);
+    bool wall_exists = bumped((uint8_t)pos_.x() + wall_coords[direction][0], \
+    		       (uint8_t)pos_.y() + wall_coords[direction][1], \
+    		       (uint8_t)pos_.x() + wall_coords[direction][2], \
+		       (uint8_t)pos_.y() + wall_coords[direction][3]);
+    return wall_exists;
 }
 
 /*
@@ -53,6 +54,7 @@ bool check_wall(QPointF& pos_, int& direction) {
  */
 void mazeVisits(uint8_t num_visits) {
     displayVisits(num_visits);
+    return;
 }
 
 /*
@@ -61,7 +63,7 @@ void mazeVisits(uint8_t num_visits) {
  */
 bool moveTurtle(QPointF& pos_, int& direction)
 {
-    if (atend(pos_.x(), pos_.y())) {
+    if (atend((int)pos_.x(), (int)pos_.y())) {
 	return false;
     }
     bool bumped = check_wall(pos_, direction);

@@ -22,39 +22,40 @@ static struct Tracker{
     uint8_t x = 11; 
     uint8_t y = 11; 
 } tracker;
-static int memory[3] = {0}; 
+static uint8_t memory[3] = {0}; 
 typedef struct coordinates coordinates; 
 struct coordinates {
     uint8_t x;
     uint8_t y;
 };
+const uint8_t wall_value = 100;
 
 // clear the turtle's memory 
 void clear_memory() {
-    memory[(int)Straight] = 0; 
-    memory[(int)Left] = 0; 
-    memory[(int)Right] = 0; 
+    memory[(uint8_t)Straight] = 0; 
+    memory[(uint8_t)Left] = 0; 
+    memory[(uint8_t)Right] = 0; 
 }
 
 // update turtle's local (x,y) position
 void update_pos(int& direction) {
     switch ((Directions)direction) {
 	case North:
-	    tracker.y += 1;
+	    tracker.y = uint8_t(tracker.y+1);
 	    break;
 	case East:
-	    tracker.x += 1;
+	    tracker.x = uint8_t(tracker.x+1);
 	    break;
 	case South:
-	    tracker.y -= 1;
+	    tracker.y = uint8_t(tracker.y-1);
 	    break;
 	case West:
-	    tracker.x -= 1;
+	    tracker.x = uint8_t(tracker.x-1);
 	    break;
 	default:
 	    ROS_ERROR("Invalid direction!"); 
     }
-    tracker.array[tracker.x][tracker.y] += 1;
+    tracker.array[tracker.x][tracker.y] =(uint8_t)(tracker.array[tracker.x][tracker.y] + 1);
     mazeVisits(tracker.array[tracker.x][tracker.y]);
     return; 
 }
@@ -64,20 +65,20 @@ coordinates get_pos_ahead(int& direction) {
     coordinates c; 
     switch ((Directions)direction) {
 	case North:
-	    c.x = tracker.x;
-	    c.y = tracker.y + 1;
+	    c.x = (uint8_t)(tracker.x);
+	    c.y = (uint8_t)(tracker.y +1);
 	    break;
 	case East:
-	    c.x = tracker.x+1;
-	    c.y = tracker.y; 
+	    c.x = (uint8_t)(tracker.x+1);
+	    c.y = (uint8_t)(tracker.y); 
 	    break;
 	case South:
-	    c.x = tracker.x;
-	    c.y = tracker.y-1; 
+	    c.x = (uint8_t)(tracker.x);
+	    c.y = (uint8_t)(tracker.y-1); 
 	    break;
 	case West:
-	    c.x = tracker.x-1;
-	    c.y = tracker.y; 
+	    c.x = (uint8_t)(tracker.x-1);
+	    c.y = (uint8_t)(tracker.y); 
 	    break;
 	default:
 	    ROS_ERROR("Invalid direction!"); 
@@ -87,8 +88,8 @@ coordinates get_pos_ahead(int& direction) {
 }
 
 // updates the turtle's memory of what's direclty in front of it 
-int look_ahead(bool bumped, int& direction) {
-    const int wall_val = 1000;
+uint8_t look_ahead(bool bumped, int& direction) {
+    const uint8_t wall_val = (uint8_t)wall_value;
     if (bumped) {
 	return wall_val; 
     } else {
@@ -98,17 +99,15 @@ int look_ahead(bool bumped, int& direction) {
 }
 
 // check if the turlte is in a dead end
-bool all_walls(int memory[3]) {
-    int min_value = 1000;
-    int min_index = 0;
+bool all_walls(uint8_t memory[3]) {
+    uint8_t min_value = wall_value;
     std::list<int> DIRS;  
-    for (int i = 0; i < 3; ++i) {
+    for (uint8_t i = 0; i < 3; ++i) {
 	if (memory[i] < min_value) {
 	    min_value = memory[i];
-	    min_index = i;
 	}
     }
-    if (min_value == 1000) {
+    if (min_value == wall_value) {
 	// dead end, return empty DIRS
 	return true; 
     }
@@ -117,10 +116,10 @@ bool all_walls(int memory[3]) {
 
 // get DIRS, a list of directions to turn in to face the minimum 
 // visited path 
-std::list<Moves> get_DIRS(int memory[3]) {
-    int min_value = 1000;
-    int min_index = 0;
-    for (int i = 0; i < 3; ++i) {
+std::list<Moves> get_DIRS(uint8_t memory[3]) {
+    uint8_t min_value = wall_value;
+    uint8_t min_index = 0;
+    for (uint8_t i = 0; i < 3; ++i) {
 	if (memory[i] < min_value) {
 	    min_value = memory[i];
 	    min_index = i;
@@ -130,7 +129,7 @@ std::list<Moves> get_DIRS(int memory[3]) {
 	return {}; 
     } else if ((Moves)min_index == Left) {
 	return {Left, Left};
-    } else if ((Moves)min_index == Straight) {
+    } else {
 	return {Left};
     }
 }
@@ -138,14 +137,13 @@ std::list<Moves> get_DIRS(int memory[3]) {
 // this procedure recommends next move following DFS 
 // bumped is true if there is a wall in front of the turtle, false otherwise
 Moves studentTurtleStep(bool bumped, int& direction) {
-    static Moves move;
     static State state = Moved;
     static int remaining_rights = 0;
     static std::list<Moves> DIRS;
-    int num_visits;
+    uint8_t num_visits;
 
     // sleep for 1 second, changing sleep duration changes turtle speed
-    sleep(0.1);
+    sleep(1);
     switch (state) {
 	case Spawned:
 	    // this is assuming turtle never spawns facing a wall
@@ -154,7 +152,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 	    return Straight;
 	case Moved:
 	    num_visits = look_ahead(bumped, direction);
-	    memory[(int)Straight] = num_visits;
+	    memory[(uint8_t)Straight] = num_visits;
             if (num_visits == 0) {
 		clear_memory();
 	        update_pos(direction);
@@ -166,7 +164,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 	    } 
 	case Turned_left:
 	    num_visits = look_ahead(bumped, direction);
-	    memory[(int)Left] = num_visits;
+	    memory[(uint8_t)Left] = num_visits;
             if (num_visits == 0) {
 		clear_memory();
 	        update_pos(direction);
@@ -184,7 +182,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 		return Right; 
 	    }
 	    num_visits = look_ahead(bumped, direction);
-	    memory[(int)Right] = num_visits;
+	    memory[(uint8_t)Right] = num_visits;
             if (num_visits == 0) {
 		clear_memory();
 	        update_pos(direction);
