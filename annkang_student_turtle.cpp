@@ -14,7 +14,7 @@
 #include "student.h"
 #include <unistd.h>
 
-// tracker is a 24 by 24 array that helps maze track how many times 
+// tracker is a 24 by 24 array that helps turtle track how many times 
 // each cell has been visited. trackerx and trackery keep track of turtle 
 // position, initialized to the center of array
 static struct Tracker{
@@ -22,12 +22,16 @@ static struct Tracker{
     uint8_t x = 11; 
     uint8_t y = 11; 
 } tracker;
+// memory is an array storing number of visits to the cells ahead on the
+// right, left, and straight of the turtle
 static uint8_t memory[3] = {0}; 
 typedef struct coordinates coordinates; 
 struct coordinates {
     uint8_t x;
     uint8_t y;
 };
+// if there is a wall to the left/right/straight of the turtle, set that
+// memory value to be 100
 const uint8_t wall_value = 100;
 
 // clear the turtle's memory 
@@ -37,7 +41,7 @@ void clear_memory() {
     memory[(uint8_t)Right] = 0; 
 }
 
-// update turtle's local (x,y) position
+// update tracker when turtle moves straight
 void update_pos(int& direction) {
     switch ((Directions)direction) {
 	case North:
@@ -101,7 +105,6 @@ uint8_t look_ahead(bool bumped, int& direction) {
 // check if the turlte is in a dead end
 bool all_walls(uint8_t memory[3]) {
     uint8_t min_value = wall_value;
-    std::list<int> DIRS;  
     for (uint8_t i = 0; i < 3; ++i) {
 	if (memory[i] < min_value) {
 	    min_value = memory[i];
@@ -114,7 +117,7 @@ bool all_walls(uint8_t memory[3]) {
     return false;
 }
 
-// get DIRS, a list of directions to turn in to face the minimum 
+// get DIRS, a list of directions to turn in to face the least 
 // visited path 
 std::list<Moves> get_DIRS(uint8_t memory[3]) {
     uint8_t min_value = wall_value;
@@ -142,14 +145,9 @@ Moves studentTurtleStep(bool bumped, int& direction) {
     static std::list<Moves> DIRS;
     uint8_t num_visits;
 
-    // sleep for 1 second, changing sleep duration changes turtle speed
-    sleep(1);
+    // sleep for x seconds, changing sleep duration changes turtle speed
+    sleep(0.1);
     switch (state) {
-	case Spawned:
-	    // this is assuming turtle never spawns facing a wall
-	    update_pos(direction);
-	    state = Moved; 
-	    return Straight;
 	case Moved:
 	    num_visits = look_ahead(bumped, direction);
 	    memory[(uint8_t)Straight] = num_visits;
@@ -222,15 +220,9 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 		return next; 
 	    }
 	default:
-	    // note that turtle will never be in Goal state since 
-	    // maze.cpp will stop calling turtle.cpp so it is not included 
-	    // in this switch statement
 	    ROS_ERROR("Invalid direction!"); 
     }
-    
-    ROS_INFO("Orientation=%i", direction);
     return Left;
-	    	ROS_INFO("STATE IS LEFT");
 }
 
 
