@@ -11,7 +11,13 @@
  *
  */
 
+#ifdef testing
+#include "student_mock.h"
+#endif
+#ifndef testing
 #include "student.h"
+#include "ros/ros.h"
+#endif
 #include <unistd.h>
 
 // tracker is a 24 by 24 array that helps turtle track how many times 
@@ -129,6 +135,27 @@ int count_lefts(uint8_t memory[3]) {
     }
 }
 
+// setters for unit testing
+void set_current_state(current_state) {
+	static State state = Moved;
+	state = current_state;
+}
+void set_remaining_lefts(rlefts_test) {
+	static int16_t remaining_lefts = -1;
+	remaining_lefts = rlefts_test;
+}
+void set_remaining_rights(rrights_test) {
+	static int16_t remaining_rights = -1;
+	remaining_rights = rrights_test;
+}
+void set_tracker(tracker_test) {
+	tracker = tracker_test;
+}
+void set_memory(memory_test) {
+	static uint8_t memory[3] = {0}; 
+	memory = memory_test
+}
+
 // this procedure recommends next move following DFS 
 Moves studentTurtleStep(bool bumped, int& direction) {
     static State state = Moved;
@@ -142,8 +169,8 @@ Moves studentTurtleStep(bool bumped, int& direction) {
     // sleep for x seconds, changing sleep duration changes turtle speed
     sleep(0.1);
     switch (state) {
-	case Moved:
-	    if (go_straight(bumped,Straight, direction, memory)) {
+	case Moved: 
+	    if (go_straight(bumped,Straight, direction, memory)) { 
 		next_move = Straight;
 	    } else {
 	        state = Turned_left; 
@@ -191,6 +218,13 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 	default:
 	    ROS_ERROR("Invalid direction!"); 
     }
+
+	// for unit testing 
+	set_state_result(state)
+	set_memory_result(memory)
+	set_rlefts_result(remaining_lefts)
+	set_rrights_result(remaining_rights)
+	set_tracker_result(tracker)
     return next_move;
 }
 
