@@ -12,21 +12,25 @@
  */
 
 #ifdef testing
-#include "student_mock.h"
+#include "annkang_student_mock.h"
 #endif
 #ifndef testing
 #include "student.h"
 #include "ros/ros.h"
 #endif
 #include <unistd.h>
+#include <cstring>
 
 // tracker is a 24 by 24 array that helps turtle track how many times 
 // each cell has been visited. trackerx and trackery keep track of turtle 
 // position, initialized to the center of array
 static struct Tracker{
-    uint8_t array[23][23] = {};
-    uint8_t x = 11; 
-    uint8_t y = 11; 
+    uint8_t array[24][24];
+    uint8_t x; 
+    uint8_t y;
+    Tracker() : x(11), y(11) {
+	std::memset(array, 0, sizeof(array)); 
+    } 
 } tracker;
 typedef struct coordinates coordinates; 
 struct coordinates {
@@ -60,7 +64,9 @@ void clearmem_updatepos(uint8_t memory[3], int& direction) {
 	    ROS_ERROR("Invalid direction!"); 
     }
     tracker.array[tracker.x][tracker.y] =(uint8_t)(tracker.array[tracker.x][tracker.y] + 1);
-    mazeVisits(tracker.array[tracker.x][tracker.y]);
+    #ifndef testing 
+        mazeVisits(tracker.array[tracker.x][tracker.y]);
+    #endif
     return; 
 }
 
@@ -136,24 +142,32 @@ int count_lefts(uint8_t memory[3]) {
 }
 
 // setters for unit testing
-void set_current_state(current_state) {
+void set_current_state(State current_state) {
 	static State state = Moved;
 	state = current_state;
 }
-void set_remaining_lefts(rlefts_test) {
+void set_rlefts(uint8_t rlefts_test) {
 	static int16_t remaining_lefts = -1;
 	remaining_lefts = rlefts_test;
 }
-void set_remaining_rights(rrights_test) {
+void set_rrights(uint8_t rrights_test) {
 	static int16_t remaining_rights = -1;
 	remaining_rights = rrights_test;
 }
-void set_tracker(tracker_test) {
-	tracker = tracker_test;
+void set_tracker(uint8_t array[24][24], uint8_t x, uint8_t y) {
+	for (uint8_t i=0; i<24; i++) {
+	    for (uint8_t j=0; j<24; j++) {
+		tracker.array[i][j] = array[i][j];
+	    }
+	}
+	tracker.x = x;
+	tracker.y = y;
 }
-void set_memory(memory_test) {
-	static uint8_t memory[3] = {0}; 
-	memory = memory_test
+void set_memory(uint8_t memory_test[3]) {
+	static uint8_t memory[3]; 
+	memory[0] = memory_test[0];
+	memory[1] = memory_test[1];
+	memory[2] = memory_test[2];
 }
 
 // this procedure recommends next move following DFS 
@@ -220,11 +234,11 @@ Moves studentTurtleStep(bool bumped, int& direction) {
     }
 
 	// for unit testing 
-	set_state_result(state)
-	set_memory_result(memory)
-	set_rlefts_result(remaining_lefts)
-	set_rrights_result(remaining_rights)
-	set_tracker_result(tracker)
+	set_state_result(state);
+	set_memory_result(memory);
+	set_rlefts_result(remaining_lefts);
+	set_rrights_result(remaining_rights);
+	set_tracker_result(tracker.array);
     return next_move;
 }
 
