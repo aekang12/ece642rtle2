@@ -20,6 +20,7 @@
 #endif
 #include <unistd.h>
 #include <cstring>
+#include <cstdio>
 
 // tracker is a 24 by 24 array that helps turtle track how many times 
 // each cell has been visited. trackerx and trackery keep track of turtle 
@@ -61,7 +62,12 @@ void clearmem_updatepos(uint8_t memory[3], int& direction) {
 	    tracker.x = uint8_t(tracker.x-1);
 	    break;
 	default:
+	    #ifdef testing
+	    ROS_ERROR_dummy("Invalid direction!"); 
+	    #endif 
+	    #ifndef testing
 	    ROS_ERROR("Invalid direction!"); 
+	    #endif
     }
     tracker.array[tracker.x][tracker.y] =(uint8_t)(tracker.array[tracker.x][tracker.y] + 1);
     #ifndef testing 
@@ -91,7 +97,12 @@ coordinates get_pos_ahead(int& direction) {
 	    c.y = (uint8_t)(tracker.y); 
 	    break;
 	default:
+	    #ifdef testing
+	    ROS_ERROR_dummy("Invalid direction!"); 
+	    #endif 
+	    #ifndef testing
 	    ROS_ERROR("Invalid direction!"); 
+	    #endif
 	    break;
     }
     return c;
@@ -141,35 +152,6 @@ int count_lefts(uint8_t memory[3]) {
     }
 }
 
-// setters for unit testing
-void set_current_state(State current_state) {
-	static State state = Moved;
-	state = current_state;
-}
-void set_rlefts(uint8_t rlefts_test) {
-	static int16_t remaining_lefts = -1;
-	remaining_lefts = rlefts_test;
-}
-void set_rrights(uint8_t rrights_test) {
-	static int16_t remaining_rights = -1;
-	remaining_rights = rrights_test;
-}
-void set_tracker(uint8_t array[24][24], uint8_t x, uint8_t y) {
-	for (uint8_t i=0; i<24; i++) {
-	    for (uint8_t j=0; j<24; j++) {
-		tracker.array[i][j] = array[i][j];
-	    }
-	}
-	tracker.x = x;
-	tracker.y = y;
-}
-void set_memory(uint8_t memory_test[3]) {
-	static uint8_t memory[3]; 
-	memory[0] = memory_test[0];
-	memory[1] = memory_test[1];
-	memory[2] = memory_test[2];
-}
-
 // this procedure recommends next move following DFS 
 Moves studentTurtleStep(bool bumped, int& direction) {
     static State state = Moved;
@@ -179,6 +161,25 @@ Moves studentTurtleStep(bool bumped, int& direction) {
     // memory is an array storing number of visits to the cells ahead on the
     // right, left, and straight of the turtle
     static uint8_t memory[3] = {0}; 
+
+    #ifdef testing    
+    // for unit testing:
+    state = get_mock_state();
+    remaining_rights = get_mock_rrights(); 
+    remaining_lefts = get_mock_rlefts(); 
+    uint8_t (*set_array)[24] = get_mock_array();
+    for (int i=0; i<24; i++) {
+	for (int j=0; j<24; j++) {
+    	    tracker.array[i][j] = set_array[i][j];
+	}
+    } 	
+    tracker.x = get_mock_x();
+    tracker.y = get_mock_y();
+    uint8_t *set_memory = get_mock_memory(); 
+    memory[0] = set_memory[0];
+    memory[1] = set_memory[1]; 
+    memory[2] = set_memory[2];  
+    #endif
 
     // sleep for x seconds, changing sleep duration changes turtle speed
     sleep(0.1);
@@ -230,15 +231,24 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 	    } 
 	    break;
 	default:
+	    #ifdef testing
+	    ROS_ERROR_dummy("Invalid direction!"); 
+	    #endif 
+	    #ifndef testing
 	    ROS_ERROR("Invalid direction!"); 
+	    #endif
     }
 
 	// for unit testing 
-	set_state_result(state);
-	set_memory_result(memory);
-	set_rlefts_result(remaining_lefts);
-	set_rrights_result(remaining_rights);
-	set_tracker_result(tracker.array);
+	#ifdef testing
+	set_mock_state(state);
+	set_mock_memory(memory);
+	set_mock_rlefts(remaining_lefts);
+	set_mock_rrights(remaining_rights);
+	set_mock_array(tracker.array);
+	set_mock_x(tracker.x);
+	set_mock_y(tracker.y);
+	#endif
     return next_move;
 }
 

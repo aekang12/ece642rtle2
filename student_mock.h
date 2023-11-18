@@ -18,4 +18,4 @@ bool will_bump();
 orientation test_orientation_result();
 void mock_set_bump(bool bump);
 
-void ROS_ERROR(std::string e);
+void ROS_ERROR_dummy(std::string e);
