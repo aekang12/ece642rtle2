@@ -132,7 +132,7 @@ uint8_t go_straight(bool bumped, Moves move, int& direction, uint8_t memory[3]) 
 
 // return how many lefts the turtle should turn to face the least 
 // visited path 
-int count_lefts(uint8_t memory[3]) {
+int16_t count_lefts(uint8_t memory[3]) {
     uint8_t min_value = wall_value;
     uint8_t min_index = 0;
     for (uint8_t i = 0; i < 3; ++i) {
@@ -182,7 +182,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
     #endif
 
     // sleep for x seconds, changing sleep duration changes turtle speed
-    sleep(0.1);
+    sleep(1);
     switch (state) {
 	case Moved: 
 	    if (go_straight(bumped,Straight, direction, memory)) { 
@@ -193,7 +193,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 	    } 
 	    break;
 	case Turned_left:
-	    remaining_lefts -= 1; 
+	    remaining_lefts = int16_t(remaining_lefts - 1); 
 	    if (remaining_lefts > 0) {
 		next_move = Left; 
 	    }
@@ -212,7 +212,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
 	    }
 	    break;
 	case Turned_right:
-	    remaining_rights -= 1; 
+	    remaining_rights = int16_t(remaining_rights -1); 
 	    if (remaining_rights > 0) {
 		next_move = Right; 
 	    }
