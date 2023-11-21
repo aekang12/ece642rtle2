@@ -1,0 +1,505 @@
+[0m[ INFO] [1700536237.943003562]: bumped called with (5, 0), (5, 1)[0m
+[0m[ INFO] [1700536237.943091313]: WEST, (4, 0)[0m
+[0m[ INFO] [1700536237.943104848]: wall coords (4, 1), (4, 0)[0m
+[33m[ WARN] [1700536237.943116423]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536237.991699847]: bumped called with (4, 0), (4, 1)[0m
+[0m[ INFO] [1700536237.991747403]: WEST, (3, 0)[0m
+[0m[ INFO] [1700536237.991759163]: wall coords (3, 1), (3, 0)[0m
+[33m[ WARN] [1700536237.991770369]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.038061666]: bumped called with (3, 0), (3, 1)[0m
+[0m[ INFO] [1700536238.040494894]: SOUTH, (3, 0)[0m
+[0m[ INFO] [1700536238.040524543]: wall coords (3, 0), (4, 0)[0m
+[33m[ WARN] [1700536238.040536987]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.084895807]: bumped called with (3, 1), (4, 1)[0m
+[0m[ INFO] [1700536238.086911293]: SOUTH, (3, 1)[0m
+[0m[ INFO] [1700536238.086938477]: wall coords (3, 1), (4, 1)[0m
+[0m[ INFO] [1700536238.134243982]: bumped called with (3, 2), (4, 2)[0m
+[0m[ INFO] [1700536238.134300221]: EAST, (3, 1)[0m
+[0m[ INFO] [1700536238.134312197]: wall coords (4, 1), (4, 2)[0m
+[33m[ WARN] [1700536238.134323224]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.183122259]: bumped called with (4, 1), (4, 2)[0m
+[0m[ INFO] [1700536238.186384789]: EAST, (4, 1)[0m
+[0m[ INFO] [1700536238.186414218]: wall coords (5, 1), (5, 2)[0m
+[33m[ WARN] [1700536238.186425559]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.229427086]: bumped called with (5, 1), (5, 2)[0m
+[0m[ INFO] [1700536238.229481976]: NORTH, (4, 1)[0m
+[0m[ INFO] [1700536238.229494258]: wall coords (5, 2), (4, 2)[0m
+[33m[ WARN] [1700536238.229505066]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.293967337]: bumped called with (4, 1), (5, 1)[0m
+[0m[ INFO] [1700536238.294032274]: EAST, (4, 1)[0m
+[0m[ INFO] [1700536238.294045140]: wall coords (5, 1), (5, 2)[0m
+[33m[ WARN] [1700536238.294055890]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.341819683]: bumped called with (5, 1), (5, 2)[0m
+[0m[ INFO] [1700536238.341867805]: SOUTH, (4, 1)[0m
+[0m[ INFO] [1700536238.341879706]: wall coords (4, 1), (5, 1)[0m
+[33m[ WARN] [1700536238.341890733]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.392264897]: bumped called with (4, 2), (5, 2)[0m
+[0m[ INFO] [1700536238.395477560]: SOUTH, (4, 2)[0m
+[0m[ INFO] [1700536238.395505636]: wall coords (4, 2), (5, 2)[0m
+[0m[ INFO] [1700536238.437490220]: bumped called with (4, 3), (5, 3)[0m
+[0m[ INFO] [1700536238.437540020]: EAST, (4, 2)[0m
+[0m[ INFO] [1700536238.437551588]: wall coords (5, 2), (5, 3)[0m
+[33m[ WARN] [1700536238.437629774]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.486021907]: bumped called with (5, 2), (5, 3)[0m
+[0m[ INFO] [1700536238.487866754]: SOUTH, (4, 2)[0m
+[0m[ INFO] [1700536238.487895441]: wall coords (4, 2), (5, 2)[0m
+[33m[ WARN] [1700536238.487907064]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.538504436]: bumped called with (4, 3), (5, 3)[0m
+[0m[ INFO] [1700536238.540272811]: WEST, (4, 2)[0m
+[0m[ INFO] [1700536238.540301555]: wall coords (4, 3), (4, 2)[0m
+[33m[ WARN] [1700536238.540313499]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.582854565]: bumped called with (4, 2), (4, 3)[0m
+[0m[ INFO] [1700536238.582899837]: WEST, (3, 2)[0m
+[0m[ INFO] [1700536238.582911745]: wall coords (3, 3), (3, 2)[0m
+[33m[ WARN] [1700536238.582922462]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.632315152]: bumped called with (3, 2), (3, 3)[0m
+[0m[ INFO] [1700536238.634203675]: SOUTH, (3, 2)[0m
+[0m[ INFO] [1700536238.634230731]: wall coords (3, 2), (4, 2)[0m
+[33m[ WARN] [1700536238.634243011]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.680061339]: bumped called with (3, 3), (4, 3)[0m
+[0m[ INFO] [1700536238.680117351]: WEST, (3, 2)[0m
+[0m[ INFO] [1700536238.680129250]: wall coords (3, 3), (3, 2)[0m
+[33m[ WARN] [1700536238.680140490]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.727324707]: bumped called with (3, 2), (3, 3)[0m
+[0m[ INFO] [1700536238.727420167]: NORTH, (3, 2)[0m
+[0m[ INFO] [1700536238.727433189]: wall coords (4, 3), (3, 3)[0m
+[33m[ WARN] [1700536238.727444117]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.772806442]: bumped called with (3, 2), (4, 2)[0m
+[0m[ INFO] [1700536238.774538432]: WEST, (3, 2)[0m
+[0m[ INFO] [1700536238.774633334]: wall coords (3, 3), (3, 2)[0m
+[33m[ WARN] [1700536238.774646657]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.822068726]: bumped called with (3, 2), (3, 3)[0m
+[0m[ INFO] [1700536238.822123521]: SOUTH, (3, 2)[0m
+[0m[ INFO] [1700536238.822135558]: wall coords (3, 2), (4, 2)[0m
+[33m[ WARN] [1700536238.822146728]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.872152860]: bumped called with (3, 3), (4, 3)[0m
+[0m[ INFO] [1700536238.872202572]: EAST, (3, 2)[0m
+[0m[ INFO] [1700536238.872214135]: wall coords (4, 2), (4, 3)[0m
+[33m[ WARN] [1700536238.872225115]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.937687490]: bumped called with (4, 2), (4, 3)[0m
+[0m[ INFO] [1700536238.941092835]: EAST, (4, 2)[0m
+[0m[ INFO] [1700536238.941123389]: wall coords (5, 2), (5, 3)[0m
+[33m[ WARN] [1700536238.941135502]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536238.982892812]: bumped called with (5, 2), (5, 3)[0m
+[0m[ INFO] [1700536238.982944694]: NORTH, (4, 2)[0m
+[0m[ INFO] [1700536238.982957111]: wall coords (5, 3), (4, 3)[0m
+[33m[ WARN] [1700536238.982967927]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.032010974]: bumped called with (4, 2), (5, 2)[0m
+[0m[ INFO] [1700536239.032060853]: EAST, (4, 2)[0m
+[0m[ INFO] [1700536239.032072872]: wall coords (5, 2), (5, 3)[0m
+[33m[ WARN] [1700536239.032083975]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.077281303]: bumped called with (5, 2), (5, 3)[0m
+[0m[ INFO] [1700536239.077329606]: SOUTH, (4, 2)[0m
+[0m[ INFO] [1700536239.077341247]: wall coords (4, 2), (5, 2)[0m
+[33m[ WARN] [1700536239.077352864]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.144286113]: bumped called with (4, 3), (5, 3)[0m
+[0m[ INFO] [1700536239.149092602]: EAST, (4, 2)[0m
+[0m[ INFO] [1700536239.149121931]: wall coords (5, 2), (5, 3)[0m
+[33m[ WARN] [1700536239.149134258]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.189399642]: bumped called with (5, 2), (5, 3)[0m
+[0m[ INFO] [1700536239.189446957]: NORTH, (4, 2)[0m
+[0m[ INFO] [1700536239.189458746]: wall coords (5, 3), (4, 3)[0m
+[33m[ WARN] [1700536239.189469935]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.244247967]: bumped called with (4, 2), (5, 2)[0m
+[0m[ INFO] [1700536239.247464300]: NORTH, (4, 1)[0m
+[0m[ INFO] [1700536239.247491947]: wall coords (5, 2), (4, 2)[0m
+[0m[ INFO] [1700536239.285205973]: bumped called with (4, 1), (5, 1)[0m
+[0m[ INFO] [1700536239.286928897]: WEST, (4, 1)[0m
+[0m[ INFO] [1700536239.286956299]: wall coords (4, 2), (4, 1)[0m
+[33m[ WARN] [1700536239.286968465]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.333456770]: bumped called with (4, 1), (4, 2)[0m
+[0m[ INFO] [1700536239.334765974]: NORTH, (4, 1)[0m
+[0m[ INFO] [1700536239.334792495]: wall coords (5, 2), (4, 2)[0m
+[33m[ WARN] [1700536239.334804682]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.384171727]: bumped called with (4, 1), (5, 1)[0m
+[0m[ INFO] [1700536239.385960015]: EAST, (4, 1)[0m
+[0m[ INFO] [1700536239.385987972]: wall coords (5, 1), (5, 2)[0m
+[33m[ WARN] [1700536239.385999714]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.429109416]: bumped called with (5, 1), (5, 2)[0m
+[0m[ INFO] [1700536239.431050151]: NORTH, (4, 1)[0m
+[0m[ INFO] [1700536239.431078043]: wall coords (5, 2), (4, 2)[0m
+[33m[ WARN] [1700536239.431090105]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.478228166]: bumped called with (4, 1), (5, 1)[0m
+[0m[ INFO] [1700536239.480075743]: WEST, (4, 1)[0m
+[0m[ INFO] [1700536239.480101089]: wall coords (4, 2), (4, 1)[0m
+[33m[ WARN] [1700536239.480112866]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.531277379]: bumped called with (4, 1), (4, 2)[0m
+[0m[ INFO] [1700536239.534616677]: WEST, (3, 1)[0m
+[0m[ INFO] [1700536239.534646180]: wall coords (3, 2), (3, 1)[0m
+[33m[ WARN] [1700536239.534657807]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.611393544]: bumped called with (3, 1), (3, 2)[0m
+[0m[ INFO] [1700536239.611440837]: WEST, (2, 1)[0m
+[0m[ INFO] [1700536239.611452797]: wall coords (2, 2), (2, 1)[0m
+[33m[ WARN] [1700536239.611463986]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.652445608]: bumped called with (2, 1), (2, 2)[0m
+[0m[ INFO] [1700536239.655712840]: SOUTH, (2, 1)[0m
+[0m[ INFO] [1700536239.655741397]: wall coords (2, 1), (3, 1)[0m
+[33m[ WARN] [1700536239.655753355]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.704101435]: bumped called with (2, 2), (3, 2)[0m
+[0m[ INFO] [1700536239.704150324]: WEST, (2, 1)[0m
+[0m[ INFO] [1700536239.704161705]: wall coords (2, 2), (2, 1)[0m
+[33m[ WARN] [1700536239.704172752]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.748777659]: bumped called with (2, 1), (2, 2)[0m
+[0m[ INFO] [1700536239.750511577]: NORTH, (2, 1)[0m
+[0m[ INFO] [1700536239.750619518]: wall coords (3, 2), (2, 2)[0m
+[33m[ WARN] [1700536239.750632321]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.800585403]: bumped called with (2, 1), (3, 1)[0m
+[0m[ INFO] [1700536239.800647037]: NORTH, (2, 0)[0m
+[0m[ INFO] [1700536239.800659462]: wall coords (3, 1), (2, 1)[0m
+[0m[ INFO] [1700536239.847940498]: bumped called with (2, 0), (3, 0)[0m
+[0m[ INFO] [1700536239.855381128]: WEST, (2, 0)[0m
+[0m[ INFO] [1700536239.855411890]: wall coords (2, 1), (2, 0)[0m
+[33m[ WARN] [1700536239.855423796]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.893368158]: bumped called with (2, 0), (2, 1)[0m
+[0m[ INFO] [1700536239.900018436]: WEST, (1, 0)[0m
+[0m[ INFO] [1700536239.900050109]: wall coords (1, 1), (1, 0)[0m
+[33m[ WARN] [1700536239.900062550]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.943767272]: bumped called with (1, 0), (1, 1)[0m
+[0m[ INFO] [1700536239.944013865]: WEST, (0, 0)[0m
+[0m[ INFO] [1700536239.944036602]: wall coords (0, 1), (0, 0)[0m
+[33m[ WARN] [1700536239.944048026]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536239.989370233]: bumped called with (0, 0), (0, 1)[0m
+[0m[ INFO] [1700536239.989629199]: SOUTH, (0, 0)[0m
+[0m[ INFO] [1700536239.989650047]: wall coords (0, 0), (1, 0)[0m
+[33m[ WARN] [1700536239.989661899]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.038432153]: bumped called with (0, 1), (1, 1)[0m
+[0m[ INFO] [1700536240.041564500]: WEST, (0, 0)[0m
+[0m[ INFO] [1700536240.041596728]: wall coords (0, 1), (0, 0)[0m
+[33m[ WARN] [1700536240.041608398]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.086884876]: bumped called with (0, 0), (0, 1)[0m
+[0m[ INFO] [1700536240.087141446]: NORTH, (0, 0)[0m
+[0m[ INFO] [1700536240.087165648]: wall coords (1, 1), (0, 1)[0m
+[33m[ WARN] [1700536240.087177724]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.133847677]: bumped called with (0, 0), (1, 0)[0m
+[0m[ INFO] [1700536240.133984502]: WEST, (0, 0)[0m
+[0m[ INFO] [1700536240.134001065]: wall coords (0, 1), (0, 0)[0m
+[33m[ WARN] [1700536240.134012271]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.181412970]: bumped called with (0, 0), (0, 1)[0m
+[0m[ INFO] [1700536240.183199392]: SOUTH, (0, 0)[0m
+[0m[ INFO] [1700536240.183226118]: wall coords (0, 0), (1, 0)[0m
+[33m[ WARN] [1700536240.183238030]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.229146975]: bumped called with (0, 1), (1, 1)[0m
+[0m[ INFO] [1700536240.231268273]: EAST, (0, 0)[0m
+[0m[ INFO] [1700536240.231296458]: wall coords (1, 0), (1, 1)[0m
+[33m[ WARN] [1700536240.231309080]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.281346976]: bumped called with (1, 0), (1, 1)[0m
+[0m[ INFO] [1700536240.281641377]: EAST, (1, 0)[0m
+[0m[ INFO] [1700536240.281663450]: wall coords (2, 0), (2, 1)[0m
+[33m[ WARN] [1700536240.281675573]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.343252505]: bumped called with (2, 0), (2, 1)[0m
+[0m[ INFO] [1700536240.343606563]: NORTH, (1, 0)[0m
+[0m[ INFO] [1700536240.343629903]: wall coords (2, 1), (1, 1)[0m
+[33m[ WARN] [1700536240.343641653]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.389563000]: bumped called with (1, 0), (2, 0)[0m
+[0m[ INFO] [1700536240.391258433]: EAST, (1, 0)[0m
+[0m[ INFO] [1700536240.391283985]: wall coords (2, 0), (2, 1)[0m
+[33m[ WARN] [1700536240.391295210]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.439450016]: bumped called with (2, 0), (2, 1)[0m
+[0m[ INFO] [1700536240.439804473]: SOUTH, (1, 0)[0m
+[0m[ INFO] [1700536240.439826114]: wall coords (1, 0), (2, 0)[0m
+[33m[ WARN] [1700536240.439838163]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.489256205]: bumped called with (1, 1), (2, 1)[0m
+[0m[ INFO] [1700536240.492556103]: SOUTH, (1, 1)[0m
+[0m[ INFO] [1700536240.492591284]: wall coords (1, 1), (2, 1)[0m
+[0m[ INFO] [1700536240.533267429]: bumped called with (1, 2), (2, 2)[0m
+[0m[ INFO] [1700536240.535022855]: EAST, (1, 1)[0m
+[0m[ INFO] [1700536240.535049885]: wall coords (2, 1), (2, 2)[0m
+[33m[ WARN] [1700536240.535062032]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.581743737]: bumped called with (2, 1), (2, 2)[0m
+[0m[ INFO] [1700536240.581883742]: SOUTH, (1, 1)[0m
+[0m[ INFO] [1700536240.581900312]: wall coords (1, 1), (2, 1)[0m
+[33m[ WARN] [1700536240.581911803]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.633067955]: bumped called with (1, 2), (2, 2)[0m
+[0m[ INFO] [1700536240.634700385]: WEST, (1, 1)[0m
+[0m[ INFO] [1700536240.634727152]: wall coords (1, 2), (1, 1)[0m
+[33m[ WARN] [1700536240.634739182]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.681171906]: bumped called with (1, 1), (1, 2)[0m
+[0m[ INFO] [1700536240.681412570]: WEST, (0, 1)[0m
+[0m[ INFO] [1700536240.681430688]: wall coords (0, 2), (0, 1)[0m
+[33m[ WARN] [1700536240.681442003]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.726730222]: bumped called with (0, 1), (0, 2)[0m
+[0m[ INFO] [1700536240.726870611]: SOUTH, (0, 1)[0m
+[0m[ INFO] [1700536240.726887805]: wall coords (0, 1), (1, 1)[0m
+[33m[ WARN] [1700536240.726899377]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.773249401]: bumped called with (0, 2), (1, 2)[0m
+[0m[ INFO] [1700536240.779684947]: SOUTH, (0, 2)[0m
+[0m[ INFO] [1700536240.779715683]: wall coords (0, 2), (1, 2)[0m
+[0m[ INFO] [1700536240.821355261]: bumped called with (0, 3), (1, 3)[0m
+[0m[ INFO] [1700536240.824189559]: EAST, (0, 2)[0m
+[0m[ INFO] [1700536240.824215770]: wall coords (1, 2), (1, 3)[0m
+[33m[ WARN] [1700536240.824227542]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.873041107]: bumped called with (1, 2), (1, 3)[0m
+[0m[ INFO] [1700536240.873263432]: EAST, (1, 2)[0m
+[0m[ INFO] [1700536240.873280557]: wall coords (2, 2), (2, 3)[0m
+[33m[ WARN] [1700536240.873291788]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.919371756]: bumped called with (2, 2), (2, 3)[0m
+[0m[ INFO] [1700536240.925100539]: EAST, (2, 2)[0m
+[0m[ INFO] [1700536240.925130118]: wall coords (3, 2), (3, 3)[0m
+[33m[ WARN] [1700536240.925141928]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536240.965573788]: bumped called with (3, 2), (3, 3)[0m
+[0m[ INFO] [1700536240.967250141]: NORTH, (2, 2)[0m
+[0m[ INFO] [1700536240.967277216]: wall coords (3, 3), (2, 3)[0m
+[33m[ WARN] [1700536240.967288626]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.014059124]: bumped called with (2, 2), (3, 2)[0m
+[0m[ INFO] [1700536241.014195513]: EAST, (2, 2)[0m
+[0m[ INFO] [1700536241.014212165]: wall coords (3, 2), (3, 3)[0m
+[33m[ WARN] [1700536241.014223296]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.078145727]: bumped called with (3, 2), (3, 3)[0m
+[0m[ INFO] [1700536241.078299628]: SOUTH, (2, 2)[0m
+[0m[ INFO] [1700536241.078317090]: wall coords (2, 2), (3, 2)[0m
+[33m[ WARN] [1700536241.078327854]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.129145663]: bumped called with (2, 3), (3, 3)[0m
+[0m[ INFO] [1700536241.130979965]: SOUTH, (2, 3)[0m
+[0m[ INFO] [1700536241.131006994]: wall coords (2, 3), (3, 3)[0m
+[0m[ INFO] [1700536241.176201125]: bumped called with (2, 4), (3, 4)[0m
+[0m[ INFO] [1700536241.178358342]: SOUTH, (2, 4)[0m
+[0m[ INFO] [1700536241.178383399]: wall coords (2, 4), (3, 4)[0m
+[0m[ INFO] [1700536241.221618494]: bumped called with (2, 5), (3, 5)[0m
+[0m[ INFO] [1700536241.223652528]: EAST, (2, 4)[0m
+[0m[ INFO] [1700536241.223678820]: wall coords (3, 4), (3, 5)[0m
+[33m[ WARN] [1700536241.223691307]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.268911878]: bumped called with (3, 4), (3, 5)[0m
+[0m[ INFO] [1700536241.271991502]: SOUTH, (2, 4)[0m
+[0m[ INFO] [1700536241.272028937]: wall coords (2, 4), (3, 4)[0m
+[33m[ WARN] [1700536241.272044474]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.317632567]: bumped called with (2, 5), (3, 5)[0m
+[0m[ INFO] [1700536241.319671083]: WEST, (2, 4)[0m
+[0m[ INFO] [1700536241.319696945]: wall coords (2, 5), (2, 4)[0m
+[33m[ WARN] [1700536241.319708915]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.364890843]: bumped called with (2, 4), (2, 5)[0m
+[0m[ INFO] [1700536241.368261439]: WEST, (1, 4)[0m
+[0m[ INFO] [1700536241.368288606]: wall coords (1, 5), (1, 4)[0m
+[33m[ WARN] [1700536241.368300342]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.431984959]: bumped called with (1, 4), (1, 5)[0m
+[0m[ INFO] [1700536241.434721037]: WEST, (0, 4)[0m
+[0m[ INFO] [1700536241.434751672]: wall coords (0, 5), (0, 4)[0m
+[33m[ WARN] [1700536241.434763853]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.480783347]: bumped called with (0, 4), (0, 5)[0m
+[0m[ INFO] [1700536241.481016999]: SOUTH, (0, 4)[0m
+[0m[ INFO] [1700536241.481034483]: wall coords (0, 4), (1, 4)[0m
+[33m[ WARN] [1700536241.481046078]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.530608793]: bumped called with (0, 5), (1, 5)[0m
+[0m[ INFO] [1700536241.530856067]: SOUTH, (0, 5)[0m
+[0m[ INFO] [1700536241.530873640]: wall coords (0, 5), (1, 5)[0m
+[0m[ INFO] [1700536241.573804379]: bumped called with (0, 6), (1, 6)[0m
+[0m[ INFO] [1700536241.575587348]: EAST, (0, 5)[0m
+[0m[ INFO] [1700536241.575616808]: wall coords (1, 5), (1, 6)[0m
+[33m[ WARN] [1700536241.575629162]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.627585893]: bumped called with (1, 5), (1, 6)[0m
+[0m[ INFO] [1700536241.627990795]: SOUTH, (0, 5)[0m
+[0m[ INFO] [1700536241.628013256]: wall coords (0, 5), (1, 5)[0m
+[33m[ WARN] [1700536241.628025524]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.669269512]: bumped called with (0, 6), (1, 6)[0m
+[0m[ INFO] [1700536241.671285997]: WEST, (0, 5)[0m
+[0m[ INFO] [1700536241.671311374]: wall coords (0, 6), (0, 5)[0m
+[33m[ WARN] [1700536241.671322923]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.716856619]: bumped called with (0, 5), (0, 6)[0m
+[0m[ INFO] [1700536241.718749122]: SOUTH, (0, 5)[0m
+[0m[ INFO] [1700536241.718777946]: wall coords (0, 5), (1, 5)[0m
+[33m[ WARN] [1700536241.718790266]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.784815522]: bumped called with (0, 6), (1, 6)[0m
+[0m[ INFO] [1700536241.785008533]: EAST, (0, 5)[0m
+[0m[ INFO] [1700536241.785026358]: wall coords (1, 5), (1, 6)[0m
+[33m[ WARN] [1700536241.785037649]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.835000323]: bumped called with (1, 5), (1, 6)[0m
+[0m[ INFO] [1700536241.835561003]: NORTH, (0, 5)[0m
+[0m[ INFO] [1700536241.835592363]: wall coords (1, 6), (0, 6)[0m
+[33m[ WARN] [1700536241.835603881]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.881728254]: bumped called with (0, 5), (1, 5)[0m
+[0m[ INFO] [1700536241.881944162]: NORTH, (0, 4)[0m
+[0m[ INFO] [1700536241.881962123]: wall coords (1, 5), (0, 5)[0m
+[0m[ INFO] [1700536241.930225084]: bumped called with (0, 4), (1, 4)[0m
+[0m[ INFO] [1700536241.932004899]: WEST, (0, 4)[0m
+[0m[ INFO] [1700536241.932033028]: wall coords (0, 5), (0, 4)[0m
+[33m[ WARN] [1700536241.932044587]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536241.976250512]: bumped called with (0, 4), (0, 5)[0m
+[0m[ INFO] [1700536241.976512017]: NORTH, (0, 4)[0m
+[0m[ INFO] [1700536241.976537489]: wall coords (1, 5), (0, 5)[0m
+[33m[ WARN] [1700536241.976549960]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.021316267]: bumped called with (0, 4), (1, 4)[0m
+[0m[ INFO] [1700536242.023091415]: EAST, (0, 4)[0m
+[0m[ INFO] [1700536242.023119588]: wall coords (1, 4), (1, 5)[0m
+[33m[ WARN] [1700536242.023131603]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.073662149]: bumped called with (1, 4), (1, 5)[0m
+[0m[ INFO] [1700536242.073920950]: EAST, (1, 4)[0m
+[0m[ INFO] [1700536242.073940005]: wall coords (2, 4), (2, 5)[0m
+[33m[ WARN] [1700536242.073952381]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.117285118]: bumped called with (2, 4), (2, 5)[0m
+[0m[ INFO] [1700536242.119152017]: NORTH, (1, 4)[0m
+[0m[ INFO] [1700536242.119179122]: wall coords (2, 5), (1, 5)[0m
+[33m[ WARN] [1700536242.119191376]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.165180217]: bumped called with (1, 4), (2, 4)[0m
+[0m[ INFO] [1700536242.167117380]: EAST, (1, 4)[0m
+[0m[ INFO] [1700536242.167142039]: wall coords (2, 4), (2, 5)[0m
+[33m[ WARN] [1700536242.167153892]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.213353883]: bumped called with (2, 4), (2, 5)[0m
+[0m[ INFO] [1700536242.215562873]: SOUTH, (1, 4)[0m
+[0m[ INFO] [1700536242.215590409]: wall coords (1, 4), (2, 4)[0m
+[33m[ WARN] [1700536242.215602798]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.263144917]: bumped called with (1, 5), (2, 5)[0m
+[0m[ INFO] [1700536242.264858303]: EAST, (1, 4)[0m
+[0m[ INFO] [1700536242.265004531]: wall coords (2, 4), (2, 5)[0m
+[33m[ WARN] [1700536242.265018695]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.308663845]: bumped called with (2, 4), (2, 5)[0m
+[0m[ INFO] [1700536242.315639445]: EAST, (2, 4)[0m
+[0m[ INFO] [1700536242.315681548]: wall coords (3, 4), (3, 5)[0m
+[33m[ WARN] [1700536242.315695092]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.359560802]: bumped called with (3, 4), (3, 5)[0m
+[0m[ INFO] [1700536242.359800418]: NORTH, (2, 4)[0m
+[0m[ INFO] [1700536242.359819224]: wall coords (3, 5), (2, 5)[0m
+[33m[ WARN] [1700536242.359830751]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.405365850]: bumped called with (2, 4), (3, 4)[0m
+[0m[ INFO] [1700536242.407124604]: EAST, (2, 4)[0m
+[0m[ INFO] [1700536242.407150115]: wall coords (3, 4), (3, 5)[0m
+[33m[ WARN] [1700536242.407162003]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.456474149]: bumped called with (3, 4), (3, 5)[0m
+[0m[ INFO] [1700536242.456959124]: SOUTH, (2, 4)[0m
+[0m[ INFO] [1700536242.456979239]: wall coords (2, 4), (3, 4)[0m
+[33m[ WARN] [1700536242.456991099]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.503588331]: bumped called with (2, 5), (3, 5)[0m
+[0m[ INFO] [1700536242.503841786]: EAST, (2, 4)[0m
+[0m[ INFO] [1700536242.503860456]: wall coords (3, 4), (3, 5)[0m
+[33m[ WARN] [1700536242.503872088]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.549635591]: bumped called with (3, 4), (3, 5)[0m
+[0m[ INFO] [1700536242.552204343]: NORTH, (2, 4)[0m
+[0m[ INFO] [1700536242.552232053]: wall coords (3, 5), (2, 5)[0m
+[33m[ WARN] [1700536242.552243689]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.601879011]: bumped called with (2, 4), (3, 4)[0m
+[0m[ INFO] [1700536242.602106765]: NORTH, (2, 3)[0m
+[0m[ INFO] [1700536242.602125199]: wall coords (3, 4), (2, 4)[0m
+[0m[ INFO] [1700536242.646941908]: bumped called with (2, 3), (3, 3)[0m
+[0m[ INFO] [1700536242.647537045]: WEST, (2, 3)[0m
+[0m[ INFO] [1700536242.647559516]: wall coords (2, 4), (2, 3)[0m
+[33m[ WARN] [1700536242.647581978]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.697701078]: bumped called with (2, 3), (2, 4)[0m
+[0m[ INFO] [1700536242.697916239]: WEST, (1, 3)[0m
+[0m[ INFO] [1700536242.697934363]: wall coords (1, 4), (1, 3)[0m
+[33m[ WARN] [1700536242.697946051]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.746118650]: bumped called with (1, 3), (1, 4)[0m
+[0m[ INFO] [1700536242.749867841]: WEST, (0, 3)[0m
+[0m[ INFO] [1700536242.749897953]: wall coords (0, 4), (0, 3)[0m
+[33m[ WARN] [1700536242.749909995]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.792264753]: bumped called with (0, 3), (0, 4)[0m
+[0m[ INFO] [1700536242.794042949]: SOUTH, (0, 3)[0m
+[0m[ INFO] [1700536242.794069260]: wall coords (0, 3), (1, 3)[0m
+[33m[ WARN] [1700536242.794080771]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.839097741]: bumped called with (0, 4), (1, 4)[0m
+[0m[ INFO] [1700536242.840946353]: WEST, (0, 3)[0m
+[0m[ INFO] [1700536242.840974318]: wall coords (0, 4), (0, 3)[0m
+[33m[ WARN] [1700536242.840986495]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.886332330]: bumped called with (0, 3), (0, 4)[0m
+[0m[ INFO] [1700536242.887492671]: NORTH, (0, 3)[0m
+[0m[ INFO] [1700536242.887516789]: wall coords (1, 4), (0, 4)[0m
+[33m[ WARN] [1700536242.887528055]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.951153188]: bumped called with (0, 3), (1, 3)[0m
+[0m[ INFO] [1700536242.951283836]: WEST, (0, 3)[0m
+[0m[ INFO] [1700536242.951300299]: wall coords (0, 4), (0, 3)[0m
+[33m[ WARN] [1700536242.951312411]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536242.999477652]: bumped called with (0, 3), (0, 4)[0m
+[0m[ INFO] [1700536242.999684310]: SOUTH, (0, 3)[0m
+[0m[ INFO] [1700536242.999701736]: wall coords (0, 3), (1, 3)[0m
+[33m[ WARN] [1700536242.999713329]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.045968147]: bumped called with (0, 4), (1, 4)[0m
+[0m[ INFO] [1700536243.046314497]: EAST, (0, 3)[0m
+[0m[ INFO] [1700536243.046334922]: wall coords (1, 3), (1, 4)[0m
+[33m[ WARN] [1700536243.046346646]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.101480238]: bumped called with (1, 3), (1, 4)[0m
+[0m[ INFO] [1700536243.101717579]: EAST, (1, 3)[0m
+[0m[ INFO] [1700536243.101735643]: wall coords (2, 3), (2, 4)[0m
+[33m[ WARN] [1700536243.101746729]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.140963270]: bumped called with (2, 3), (2, 4)[0m
+[0m[ INFO] [1700536243.142614867]: NORTH, (1, 3)[0m
+[0m[ INFO] [1700536243.142640690]: wall coords (2, 4), (1, 4)[0m
+[33m[ WARN] [1700536243.142652625]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.191521829]: bumped called with (1, 3), (2, 3)[0m
+[0m[ INFO] [1700536243.191742451]: EAST, (1, 3)[0m
+[0m[ INFO] [1700536243.191760401]: wall coords (2, 3), (2, 4)[0m
+[33m[ WARN] [1700536243.191771727]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.238103589]: bumped called with (2, 3), (2, 4)[0m
+[0m[ INFO] [1700536243.240380613]: SOUTH, (1, 3)[0m
+[0m[ INFO] [1700536243.240478559]: wall coords (1, 3), (2, 3)[0m
+[33m[ WARN] [1700536243.240491677]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.285599370]: bumped called with (1, 4), (2, 4)[0m
+[0m[ INFO] [1700536243.287773839]: EAST, (1, 3)[0m
+[0m[ INFO] [1700536243.287802242]: wall coords (2, 3), (2, 4)[0m
+[33m[ WARN] [1700536243.287814651]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.341462066]: bumped called with (2, 3), (2, 4)[0m
+[0m[ INFO] [1700536243.341701051]: EAST, (2, 3)[0m
+[0m[ INFO] [1700536243.341719097]: wall coords (3, 3), (3, 4)[0m
+[33m[ WARN] [1700536243.341730907]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.381261222]: bumped called with (3, 3), (3, 4)[0m
+[0m[ INFO] [1700536243.386267804]: EAST, (3, 3)[0m
+[0m[ INFO] [1700536243.386295324]: wall coords (4, 3), (4, 4)[0m
+[33m[ WARN] [1700536243.386307354]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.448119301]: bumped called with (4, 3), (4, 4)[0m
+[0m[ INFO] [1700536243.448305793]: NORTH, (3, 3)[0m
+[0m[ INFO] [1700536243.448323170]: wall coords (4, 4), (3, 4)[0m
+[33m[ WARN] [1700536243.448335118]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.496779619]: bumped called with (3, 3), (4, 3)[0m
+[0m[ INFO] [1700536243.496961063]: EAST, (3, 3)[0m
+[0m[ INFO] [1700536243.496978220]: wall coords (4, 3), (4, 4)[0m
+[33m[ WARN] [1700536243.496989782]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.543552239]: bumped called with (4, 3), (4, 4)[0m
+[0m[ INFO] [1700536243.543778467]: SOUTH, (3, 3)[0m
+[0m[ INFO] [1700536243.543795786]: wall coords (3, 3), (4, 3)[0m
+[33m[ WARN] [1700536243.543807003]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.589437065]: bumped called with (3, 4), (4, 4)[0m
+[0m[ INFO] [1700536243.595674601]: SOUTH, (3, 4)[0m
+[0m[ INFO] [1700536243.595700892]: wall coords (3, 4), (4, 4)[0m
+[0m[ INFO] [1700536243.640298517]: bumped called with (3, 5), (4, 5)[0m
+[0m[ INFO] [1700536243.640603210]: SOUTH, (3, 5)[0m
+[0m[ INFO] [1700536243.640623628]: wall coords (3, 5), (4, 5)[0m
+[0m[ INFO] [1700536243.687514488]: bumped called with (3, 6), (4, 6)[0m
+[0m[ INFO] [1700536243.691479520]: EAST, (3, 5)[0m
+[0m[ INFO] [1700536243.691510068]: wall coords (4, 5), (4, 6)[0m
+[33m[ WARN] [1700536243.691521888]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.736206766]: bumped called with (4, 5), (4, 6)[0m
+[0m[ INFO] [1700536243.738210485]: EAST, (4, 5)[0m
+[0m[ INFO] [1700536243.738236439]: wall coords (5, 5), (5, 6)[0m
+[33m[ WARN] [1700536243.738247982]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.785430352]: bumped called with (5, 5), (5, 6)[0m
+[0m[ INFO] [1700536243.785660431]: EAST, (5, 5)[0m
+[0m[ INFO] [1700536243.785678205]: wall coords (6, 5), (6, 6)[0m
+[33m[ WARN] [1700536243.785689279]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.829547797]: bumped called with (6, 5), (6, 6)[0m
+[0m[ INFO] [1700536243.831530285]: NORTH, (5, 5)[0m
+[0m[ INFO] [1700536243.831559250]: wall coords (6, 6), (5, 6)[0m
+[33m[ WARN] [1700536243.831571430]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.877481431]: bumped called with (5, 5), (6, 5)[0m
+[0m[ INFO] [1700536243.884531875]: NORTH, (5, 4)[0m
+[0m[ INFO] [1700536243.884557799]: wall coords (6, 5), (5, 5)[0m
+[0m[ INFO] [1700536243.926426362]: bumped called with (5, 4), (6, 4)[0m
+[0m[ INFO] [1700536243.927835918]: WEST, (5, 4)[0m
+[0m[ INFO] [1700536243.927860463]: wall coords (5, 5), (5, 4)[0m
+[33m[ WARN] [1700536243.927872677]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536243.973416661]: bumped called with (5, 4), (5, 5)[0m
+[0m[ INFO] [1700536243.975133012]: NORTH, (5, 4)[0m
+[0m[ INFO] [1700536243.975159362]: wall coords (6, 5), (5, 5)[0m
+[33m[ WARN] [1700536243.975171244]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536244.024789375]: bumped called with (5, 4), (6, 4)[0m
+[0m[ INFO] [1700536244.025466634]: EAST, (5, 4)[0m
+[0m[ INFO] [1700536244.025492721]: wall coords (6, 4), (6, 5)[0m
+[33m[ WARN] [1700536244.025504552]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536244.069154157]: bumped called with (6, 4), (6, 5)[0m
+[0m[ INFO] [1700536244.072524459]: EAST, (6, 4)[0m
+[0m[ INFO] [1700536244.072550688]: wall coords (7, 4), (7, 5)[0m
+[33m[ WARN] [1700536244.072562488]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536244.135180451]: bumped called with (7, 4), (7, 5)[0m
+[0m[ INFO] [1700536244.139565081]: EAST, (7, 4)[0m
+[0m[ INFO] [1700536244.139589843]: wall coords (8, 4), (8, 5)[0m
+[33m[ WARN] [1700536244.143231188]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536244.180514985]: bumped called with (8, 4), (8, 5)[0m
+[0m[ INFO] [1700536244.182041738]: NORTH, (7, 4)[0m
+[0m[ INFO] [1700536244.182067498]: wall coords (8, 5), (7, 5)[0m
+[33m[ WARN] [1700536244.182078893]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536244.233911829]: bumped called with (7, 4), (8, 4)[0m
+[0m[ INFO] [1700536244.234144627]: NORTH, (7, 3)[0m
+[0m[ INFO] [1700536244.234164464]: wall coords (8, 4), (7, 4)[0m
+[0m[ INFO] [1700536244.282602903]: bumped called with (7, 3), (8, 3)[0m
+[0m[ INFO] [1700536244.282909803]: WEST, (7, 3)[0m
+[0m[ INFO] [1700536244.282928513]: wall coords (7, 4), (7, 3)[0m
+[33m[ WARN] [1700536244.282940676]: Turtle is not facing direction it is bumping in![0m
+[0m[ INFO] [1700536244.346020838]: bumped called with (7, 3), (7, 4)[0m
+[0m[ INFO] [1700536244.349903915]: WEST, (6, 3)[0m
+[0m[ INFO] [1700536244.349930300]: wall coords (6, 4), (6, 3)[0m
+[33m[ WARN] [1700536244.349941908]: Turtle is not facing direction it is bumping in![0m

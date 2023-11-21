@@ -182,7 +182,7 @@ Moves studentTurtleStep(bool bumped, int& direction) {
     #endif
 
     // sleep for x seconds, changing sleep duration changes turtle speed
-    sleep(1);
+    sleep(0.1);
     switch (state) {
 	case Moved: 
 	    if (go_straight(bumped,Straight, direction, memory)) { 
